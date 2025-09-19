@@ -28,11 +28,32 @@
 
 
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class DistanceMultiple {
     public static void main(String[] args) {
 
+        Scanner scan = new Scanner(System.in);
+        System.out.println("How many point pairs do you want to calculate the distance of?\n");
+        int nr = scan.nextInt();
+        scan.nextLine();
+        for(int i = 0; i < nr; i++) {
+            int x1,x2,y1,y2;
+            System.out.println("Enter your first point pair: ");
+            String input = scan.nextLine();
+            Scanner s = new Scanner(input);
+            s.useDelimiter("[(),\\s]+");
+            x1 = s.nextInt();
+            y1 = s.nextInt();
+            x2 = s.nextInt();
+            y2 = s.nextInt();
+            double d;
+
+            System.out.println(Math.sqrt(Math.pow(x2-x1,2)+Math.pow(y2-y1,2)));
+
+        }
 
     }
 
